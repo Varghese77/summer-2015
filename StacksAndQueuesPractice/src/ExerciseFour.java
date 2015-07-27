@@ -6,6 +6,22 @@ public class ExerciseFour {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Stack<Integer> test = new Stack();
+		
+		//test values from prompt
+		test.add(new Integer(7));
+		test.add(new Integer(2));
+		test.add(new Integer(8));
+		test.add(new Integer(9));
+		test.add(new Integer(4));
+		test.add(new Integer(11));
+		test.add(new Integer(7));
+		test.add(new Integer(1));
+		test.add(new Integer(42));
+		
+		System.out.println("Before: " + test);
+		test = collapse(test);
+		System.out.println("After: " + test);
 
 	}
 	
@@ -13,16 +29,15 @@ public class ExerciseFour {
 		Queue<Integer> aux = new LinkedList();
 		int toCollapseSize = toCollapse.size();
 		
-		//Adds values in stack in pairs of twos
-		for (int i = 1; i < toCollapseSize; i += 2){
-			int sum = toCollapse.pop() + toCollapse.pop();
-			aux.add(new Integer(sum));
+		//removes odd number that doesn't need to be added if needed
+		if (toCollapseSize % 2 != 0){
+			aux.add(toCollapse.pop());
 		}
 		
-		// Adds last remaining non-added value if it exists
-		if (!toCollapse.isEmpty()){
-			aux.add(toCollapse.pop());
-			
+		//Adds values in stack in pairs of twos
+		while(!toCollapse.isEmpty()){
+			int sum = toCollapse.pop() + toCollapse.pop();
+			aux.add(new Integer(sum));
 		}
 		
 		// Re-aligns Values to stack
