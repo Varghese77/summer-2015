@@ -1,12 +1,24 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
+//Exercise from Building Java Programs 3rd Edition Chapter 14 Exercise 1
 import java.util.Stack;
 
 public class ExerciseOne {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Stack<Integer> testStack = new Stack();
+		
+		//fills stack with Random Integers between -100 & 100
+		for (int i = 0; i < 10; i++) {
+			testStack.add(new Integer((int) (Math.random() * 200) - 100));
+		}
+		
+		//Tests Method
+		System.out.println("Before: " + testStack);
+		testStack = splitStack(testStack);
+		System.out.println("After: " + testStack);
 	}
 	
 	public static Stack<Integer> splitStack(Stack<Integer> toSplit) {
