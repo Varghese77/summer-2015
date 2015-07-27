@@ -27,6 +27,12 @@ public class ExerciseFourteen {
 	}
 
 	public static Queue<Integer> reverseFirstK(int k, Queue<Integer> toReverse){
+		if (k <= 0){
+			return toReverse;
+		} else if(toReverse.size() < k) {
+			throw new IllegalArgumentException();
+		}
+		
 		Stack<Integer> aux = new Stack<Integer>();
 		
 		// //pushes values to reverse in auxiliary stack
