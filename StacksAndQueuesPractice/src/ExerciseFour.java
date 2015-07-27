@@ -9,15 +9,15 @@ public class ExerciseFour {
 		Stack<Integer> test = new Stack();
 		
 		//test values from prompt
-		test.add(new Integer(7));
-		test.add(new Integer(2));
-		test.add(new Integer(8));
-		test.add(new Integer(9));
-		test.add(new Integer(4));
-		test.add(new Integer(11));
-		test.add(new Integer(7));
-		test.add(new Integer(1));
-		test.add(new Integer(42));
+		test.push(new Integer(7));
+		test.push(new Integer(2));
+		test.push(new Integer(8));
+		test.push(new Integer(9));
+		test.push(new Integer(4));
+		test.push(new Integer(11));
+		test.push(new Integer(7));
+		test.push(new Integer(1));
+		test.push(new Integer(42));
 		
 		System.out.println("Before: " + test);
 		test = collapse(test);
@@ -42,7 +42,7 @@ public class ExerciseFour {
 		
 		// Re-aligns Values to stack
 		while(!aux.isEmpty()){
-			toCollapse.add(aux.remove());
+			toCollapse.push(aux.remove());
 		}
 		
 		while(!toCollapse.isEmpty()){
@@ -50,7 +50,7 @@ public class ExerciseFour {
 		}
 		
 		while(!aux.isEmpty()){
-			toCollapse.add(aux.remove());
+			toCollapse.push(aux.remove());
 		}
 		
 		return toCollapse;	

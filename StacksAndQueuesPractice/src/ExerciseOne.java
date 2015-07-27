@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 //Exercise from Building Java Programs 3rd Edition Chapter 14 Exercise 1
 import java.util.Stack;
 
@@ -12,7 +11,7 @@ public class ExerciseOne {
 		
 		//fills stack with Random Integers between -100 & 100
 		for (int i = 0; i < 10; i++) {
-			testStack.add(new Integer((int) (Math.random() * 200) - 100));
+			testStack.push(new Integer((int) (Math.random() * 200) - 100));
 		}
 		
 		//Tests Method
@@ -35,7 +34,7 @@ public class ExerciseOne {
 		for (int i = 0; i < auxSize; i++){
 			Integer toSort = aux.remove();
 			if (toSort.intValue() < 0){
-				toSplit.add(toSort);
+				toSplit.push(toSort);
 			}else {
 				aux.add(toSort);
 			}
@@ -43,7 +42,7 @@ public class ExerciseOne {
 		
 		// adds remaining non-negative values to stack
 		while (!aux.isEmpty()){
-			toSplit.add(aux.remove());
+			toSplit.push(aux.remove());
 		}
 		
 		// Return split Stack
